@@ -14,19 +14,19 @@ No more defining a `cd ../../../../../../../..` alias.  Just `up 8`.
 
 ## Installation
 
-### With [fisherman]
+### With [fisher]
 
 ```fish
-fisher jschwrtz/up
+fisher install charitarthchugh/up
 ```
 
 ## Usage
 
-move up two directories (cd ../..)
+move up two directories (cd ../../)
   ```fish
   up 2
   ```
-move up 5 directories (cd ../../../../..)
+move up 5 directories (cd ../../../../../)
   ```fish
   up 5
   ```

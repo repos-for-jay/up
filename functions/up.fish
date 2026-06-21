@@ -7,7 +7,7 @@ function up --description 'go up $argv directories (default 1)'
   else if test $argv[1] -eq 1
     cd $up_to
   else
-    for x in (seq $argv[1])
+    for x in (seq (math $argv[1] - 1))
       set up_to "$up_to/.."
     end
     cd $up_to

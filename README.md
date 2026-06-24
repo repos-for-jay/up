@@ -27,9 +27,9 @@ fisher install repos-for-jay/up
 
 ## Usage
 
-move up two directories (cd ../../)
+move up one directory (cd ..)
   ```fish
-  up 2
+  up
   ```
 move up 5 directories (cd ../../../../../)
   ```fish

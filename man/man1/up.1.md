@@ -1,4 +1,4 @@
-up(1) -- Effecient dirstack navigation for fish
+up(1) -- Efficient dirstack navigation for fish
 ===============================================
 
 ## SYNOPSIS

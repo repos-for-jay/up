@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Fish
+        run: |
+          sudo add-apt-repository -y ppa:fish-shell/release-3
+          sudo apt-get update
+          sudo apt-get install -y fish
+
+      - name: Install Fisher and plugin
+        run: |
+          fish -c "
+            curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+            fisher install jorgebucaran/fisher
+            fisher install .
+          "
+
+      - name: Run tests
+        run: fish test/up.fish

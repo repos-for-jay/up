@@ -1,8 +1,8 @@
 # Up, the Fish Plugin
 
-![Up](https://raw.githubusercontent.com/jschwrtz/up/master/docs/up.jpeg "Up.fish")
+![Up](https://raw.githubusercontent.com/repos-for-jay/up/master/docs/up.jpeg "Up.fish")
 
-[![Build Status][travis-badge]][travis-link]
+[![CI](https://github.com/repos-for-jay/up/actions/workflows/ci.yml/badge.svg)](https://github.com/repos-for-jay/up/actions/workflows/ci.yml)
 
 Tired of `cd ..`, `cd ../..`, `cd ../../..`, `cd ../../../..`, or using multiple aliases to navigate up directories?
 
@@ -12,12 +12,17 @@ Type `up` to go up one directory.  Type `up 2` to go up two directories.  Type `
 
 No more defining a `cd ../../../../../../../..` alias.  Just `up 8`.
 
+## Requirements
+
+- [Fish](https://fishshell.com/) 3.0+
+- [Fisher](https://github.com/jorgebucaran/fisher)
+
 ## Installation
 
 ### With [fisher]
 
 ```fish
-fisher install charitarthchugh/up
+fisher install repos-for-jay/up
 ```
 
 ## Usage
@@ -31,6 +36,4 @@ move up 5 directories (cd ../../../../../)
   up 5
   ```
 
-[travis-link]: https://travis-ci.org/jschwrtz/up
-[travis-badge]: https://img.shields.io/travis/jschwrtz/up.svg
-[fisherman]: https://github.com/fisherman/fisherman
+[fisher]: https://github.com/jorgebucaran/fisher

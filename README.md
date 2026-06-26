@@ -1,8 +1,8 @@
 # Up, the Fish Plugin
 
-![Up](https://raw.githubusercontent.com/repos-for-jay/up/master/docs/up.jpeg "Up.fish")
+![Up](https://raw.githubusercontent.com/the-jay-schwartz/up/master/docs/up.jpeg "Up.fish")
 
-[![CI](https://github.com/repos-for-jay/up/actions/workflows/ci.yml/badge.svg)](https://github.com/repos-for-jay/up/actions/workflows/ci.yml)
+[![CI](https://github.com/the-jay-schwartz/up/actions/workflows/ci.yml/badge.svg)](https://github.com/the-jay-schwartz/up/actions/workflows/ci.yml)
 
 Tired of `cd ..`, `cd ../..`, `cd ../../..`, `cd ../../../..`, or using multiple aliases to navigate up directories?
 
@@ -22,7 +22,7 @@ No more defining a `cd ../../../../../../../..` alias.  Just `up 8`.
 ### With [fisher]
 
 ```fish
-fisher install repos-for-jay/up
+fisher install the-jay-schwartz/up
 ```
 
 ## Usage
@@ -35,5 +35,11 @@ move up 5 directories (`cd ../../../../../`)
   ```fish
   up 5
   ```
+
+## Options
+
+| Flag | Description |
+|------|-------------|
+| `-h`, `--help` | Show help message |
 
 [fisher]: https://github.com/jorgebucaran/fisher

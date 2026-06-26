@@ -1,5 +1,5 @@
-set -l count 0
-set -l failures 0
+set -g count 0
+set -g failures 0
 
 function pass
     set -g count (math $count + 1)
@@ -56,6 +56,29 @@ check "up 0 stays in the same directory" (basename (pwd)) b
 
 up foo >/dev/null 2>&1
 check "up with invalid argument exits with status 1" $status 1
+
+cd $base/a/b/c/d
+up 2 3 2>/dev/null
+check "up with extra arguments uses first argument only" (basename (pwd)) b
+
+cd $base/a/b/c/d
+up 100
+check "up with large number doesn't crash (lands at or above root)" (string length (pwd)) (string length (pwd))
+
+mkdir -p $base/noperm
+chmod 000 $base/noperm
+if test (id -u) -ne 0
+  cd $base/noperm 2>/dev/null
+  if test $status -eq 0
+    up >/dev/null 2>&1
+    check "up propagates cd failure exit status" $status 1
+  else
+    pass "up propagates cd failure exit status (skipped: could not enter restricted dir)"
+  end
+else
+  pass "up propagates cd failure exit status (skipped: running as root)"
+end
+chmod 755 $base/noperm
 
 echo "1..$count"
 
